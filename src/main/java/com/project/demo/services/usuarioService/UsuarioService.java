@@ -2,11 +2,14 @@ package com.project.demo.services.usuarioService;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 
-import com.project.demo.model.usuarioModulo.usuarioModel;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.project.demo.model.usuarioModel.usuarioModel;
 import com.project.demo.repository.usuarioRepository.IUsuarioRepository;
 
+@Service
 public class UsuarioService implements IUsuarioService{
 
     @Autowired

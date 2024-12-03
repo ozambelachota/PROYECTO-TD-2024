@@ -2,7 +2,7 @@ package com.project.demo.services.usuarioService;
 
 import java.util.List;
 
-import com.project.demo.model.usuarioModulo.usuarioModel;
+import com.project.demo.model.usuarioModel.usuarioModel;
 
 public interface IUsuarioService {
     public usuarioModel add (usuarioModel model);

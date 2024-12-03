@@ -1,4 +1,4 @@
-package com.project.demo.model.usuarioModulo;
+package com.project.demo.model.usuarioModel;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
