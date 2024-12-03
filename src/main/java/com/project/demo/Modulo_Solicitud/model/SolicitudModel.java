@@ -15,7 +15,7 @@ public class SolicitudModel {
 
     @Id
 
-    @Column(name = "Idsolicitud")
+    @Column(name = "id_solicitud")
     public Integer Idsolicitud;
 
     @Column(name = "fecha")
