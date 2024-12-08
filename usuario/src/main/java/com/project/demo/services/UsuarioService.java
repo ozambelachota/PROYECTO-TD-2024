@@ -1,4 +1,4 @@
-package com.project.demo.services.usuarioService;
+package com.project.demo.services;
 
 import java.util.List;
 
@@ -6,8 +6,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.project.demo.model.usuarioModel.usuarioModel;
-import com.project.demo.repository.usuarioRepository.IUsuarioRepository;
+import com.project.demo.model.usuarioModel;
+import com.project.demo.repository.IUsuarioRepository;
+
 
 @Service
 public class UsuarioService implements IUsuarioService{

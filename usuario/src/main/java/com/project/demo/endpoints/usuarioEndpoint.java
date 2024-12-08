@@ -1,4 +1,4 @@
-package com.project.demo.endpoints.usuarioEndpoint;
+package com.project.demo.endpoints;
 
 public class usuarioEndpoint {
     public static final String USUARIO_ENDPOINT = "/usuario";

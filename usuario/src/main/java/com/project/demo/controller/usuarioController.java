@@ -1,4 +1,4 @@
-package com.project.demo.controller.usuarioController;
+package com.project.demo.controller;
 
 import java.util.List;
 
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.project.demo.endpoints.usuarioEndpoint.usuarioEndpoint;
-import com.project.demo.model.usuarioModel.usuarioModel;
-import com.project.demo.services.usuarioService.UsuarioService;
+import com.project.demo.endpoints.usuarioEndpoint;
+import com.project.demo.model.usuarioModel;
+import com.project.demo.services.UsuarioService;
 
 
 @RestController
