@@ -30,7 +30,7 @@ public class Archivo {
   private char estado;
 
   @OneToMany(
-    mappedBy = "resolucion",
+    mappedBy = "archivo",
     cascade = CascadeType.ALL,
     orphanRemoval = true
   )
