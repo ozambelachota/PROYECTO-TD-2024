@@ -35,5 +35,8 @@ out/
 
 ### VS Code ###
 .vscode/
+<<<<<<< HEAD
 
 .codegpt
+=======
+>>>>>>> 50d0904 (cambios)
