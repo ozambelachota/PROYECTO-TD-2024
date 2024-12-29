@@ -13,7 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.demo.adapters.rest.constants.usuarioEndpoint;
+<<<<<<< HEAD
 import com.project.demo.domain.personaModel;
+=======
+>>>>>>> af798b7 (feature: files reorganized)
 import com.project.demo.domain.usuarioModel;
 import com.project.demo.infrastructure.servicesImpl.UsuarioService;
 

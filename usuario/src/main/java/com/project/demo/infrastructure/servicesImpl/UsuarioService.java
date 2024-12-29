@@ -7,7 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.project.demo.application.services.IUsuarioService;
+<<<<<<< HEAD
 import com.project.demo.domain.personaModel;
+=======
+>>>>>>> af798b7 (feature: files reorganized)
 import com.project.demo.domain.usuarioModel;
 import com.project.demo.infrastructure.repositories.IUsuarioRepository;
 
