@@ -1,4 +1,4 @@
-package com.project.demo.services;
+package com.project.demo.infrastructure.servicesImpl;
 
 import java.util.List;
 
@@ -6,8 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
-import com.project.demo.model.personaModel;
-import com.project.demo.repository.IPersonaRepository;
+import com.project.demo.application.services.IPersonaService;
+import com.project.demo.domain.personaModel;
+import com.project.demo.infrastructure.repositories.IPersonaRepository;
 
 @Service
 public class PersonaService implements IPersonaService{

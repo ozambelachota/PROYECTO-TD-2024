@@ -414,6 +414,7 @@ Caused by: org.hibernate.HibernateException: Unable to determine Dialect without
 2024-12-28T19:57:40.030-05:00  INFO 27236 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
 2024-12-28T19:57:40.467-05:00  INFO 27236 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
 2024-12-28T19:57:40.633-05:00  INFO 27236 --- [demo] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 2025-01-07T12:33:40.151-05:00  INFO 23352 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
@@ -472,11 +473,19 @@ Caused by: org.hibernate.HibernateException: Unable to determine Dialect without
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 9.0.1
+=======
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 9.1
+>>>>>>> af798b7 (feature: files reorganized)
 	Autocommit mode: undefined/unknown
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> af798b7 (feature: files reorganized)
 2024-12-28T19:57:41.566-05:00  INFO 27236 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 2024-12-28T19:57:41.569-05:00  INFO 27236 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
 2024-12-28T19:57:41.899-05:00  WARN 27236 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
@@ -502,6 +511,7 @@ Caused by: org.hibernate.HibernateException: Unable to determine Dialect without
 2024-12-28T20:02:10.950-05:00  INFO 23364 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
 2024-12-28T20:02:11.349-05:00  INFO 23364 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
 2024-12-28T20:02:11.548-05:00  INFO 23364 --- [demo] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 2025-01-07T12:39:24.944-05:00  INFO 5196 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
@@ -562,11 +572,19 @@ Caused by: org.hibernate.HibernateException: Unable to determine Dialect without
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 9.0.1
+=======
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 9.1
+>>>>>>> af798b7 (feature: files reorganized)
 	Autocommit mode: undefined/unknown
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> af798b7 (feature: files reorganized)
 2024-12-28T20:02:12.722-05:00  INFO 23364 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 2024-12-28T20:02:12.723-05:00  INFO 23364 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
 2024-12-28T20:02:13.101-05:00  WARN 23364 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
@@ -575,6 +593,7 @@ Caused by: org.hibernate.HibernateException: Unable to determine Dialect without
 2024-12-28T20:02:24.304-05:00  INFO 23364 --- [demo] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-12-28T20:02:24.304-05:00  INFO 23364 --- [demo] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2024-12-28T20:02:24.304-05:00  INFO 23364 --- [demo] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+<<<<<<< HEAD
 >>>>>>> af798b7 (feature: files reorganized)
 =======
 <<<<<<< HEAD
@@ -761,3 +780,5 @@ Caused by: org.hibernate.HibernateException: Unable to determine Dialect without
 2024-12-14T18:07:06.787-05:00  WARN 20116 --- [demo] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m46s836ms942µs800ns).
 >>>>>>> ce51948 (feat: add controller resolucion)
 >>>>>>> 9a03a64 (feat: add shared globalexception)
+=======
+>>>>>>> af798b7 (feature: files reorganized)
