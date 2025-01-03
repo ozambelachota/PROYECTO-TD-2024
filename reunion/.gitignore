@@ -36,7 +36,12 @@ out/
 ### VS Code ###
 .vscode/
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 .codegpt
 =======
 >>>>>>> 50d0904 (cambios)
+=======
+
+.codegpt
+>>>>>>> 5e8e64d (creacion de carpetas)
