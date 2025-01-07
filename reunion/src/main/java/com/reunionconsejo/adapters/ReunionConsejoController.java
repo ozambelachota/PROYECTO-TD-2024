@@ -9,6 +9,7 @@ import com.reunionconsejo.domain.ReunionConsejoModel;
 import com.reunionconsejo.domain.endpoints.ReunionConsejoEndpoint;
 import com.reunionconsejo.infrastructure.service.ReunionConsejoService;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -33,6 +34,19 @@ public class ReunionConsejoController {
     public ReunionConsejoModel create(@RequestBody ReunionConsejoModel model){
         return serviceConsejo.add(model);
     }
+ @GetMapping(name =  ReunionConsejoEndpoint.reunionConsejoBuscarID)
+    public ReunionConsejoModel getById(@PathVariable("id_reunion") int id){
+        return serviceConsejo.getById(id);
+    }
 
+    @PutMapping(name =  ReunionConsejoEndpoint.reunionConsejoUpdate)
+    public ReunionConsejoModel update(@RequestBody ReunionConsejoModel model){
+        return serviceConsejo.update(model);
+    }
+
+    @DeleteMapping(name =  ReunionConsejoEndpoint.reunionConsejoDelete)
+    public boolean delete(@PathVariable("id_reunion") int id){
+        return serviceConsejo.delete(id);
+    }
     
 }
