@@ -5,12 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-
 import java.sql.Date;
-import java.util.List;
-
 import lombok.Data;
 
 @Entity
@@ -39,9 +35,6 @@ public class Solicitud {
 
   @Column(name = "creado_usuario")
   private Integer creadoUsuario;
-
-  @OneToMany
-  private List<Resolucion> resolucions;
 
   @Column(name = "creado_fecha")
   private Date creadoFecha;

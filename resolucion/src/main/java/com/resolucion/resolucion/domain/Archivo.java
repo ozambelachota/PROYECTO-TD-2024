@@ -1,16 +1,12 @@
 package com.resolucion.resolucion.domain;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-
 import java.sql.Date;
-import java.util.List;
 
 @Entity
 @Table(name = "archivo")
@@ -28,13 +24,6 @@ public class Archivo {
 
   @Column(name = "estado")
   private char estado;
-
-  @OneToMany(
-    mappedBy = "archivo",
-    cascade = CascadeType.ALL,
-    orphanRemoval = true
-  )
-  private List<Resolucion> resolucions;
 
   @Column(name = "creado_usuario")
   private Integer creadoUsuario;
