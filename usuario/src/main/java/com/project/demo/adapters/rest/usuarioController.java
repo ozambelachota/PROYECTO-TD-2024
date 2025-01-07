@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.PostMapping;
+=======
+>>>>>>> 8d121d9 (feature: Modulo Usuario Corregido)
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,9 +17,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.project.demo.adapters.rest.constants.usuarioEndpoint;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import com.project.demo.domain.personaModel;
 =======
 >>>>>>> af798b7 (feature: files reorganized)
+=======
+import com.project.demo.domain.personaModel;
+>>>>>>> 8d121d9 (feature: Modulo Usuario Corregido)
 import com.project.demo.domain.usuarioModel;
 import com.project.demo.infrastructure.servicesImpl.UsuarioService;
 
@@ -35,10 +42,17 @@ public class usuarioController {
 
     @GetMapping(usuarioEndpoint.USUARIO_GET_PERSONA)
     public personaModel getPersonaByUsuario(@PathVariable("id") int id){
+<<<<<<< HEAD
         return service.getPersonabyUser(id);        
     }
 
     @PostMapping(usuarioEndpoint.USUARIO_CREATE)
+=======
+        return service.getPersonabyUser(id);
+    }
+
+    @GetMapping(usuarioEndpoint.USUARIO_CREATE)
+>>>>>>> 8d121d9 (feature: Modulo Usuario Corregido)
     public usuarioModel create(@RequestBody usuarioModel model){
         return service.add(model);
     }

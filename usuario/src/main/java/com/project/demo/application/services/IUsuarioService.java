@@ -3,9 +3,13 @@ package com.project.demo.application.services;
 import java.util.List;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import com.project.demo.domain.personaModel;
 =======
 >>>>>>> af798b7 (feature: files reorganized)
+=======
+import com.project.demo.domain.personaModel;
+>>>>>>> 8d121d9 (feature: Modulo Usuario Corregido)
 import com.project.demo.domain.usuarioModel;
 
 public interface IUsuarioService {
