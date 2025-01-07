@@ -7,4 +7,5 @@ public class usuarioEndpoint {
     public static final String USUARIO_GET_ALL = "/getAll";
     public static final String USUARIO_GET_BY_ID = "/getById/{id}";
     public static final String USUARIO_DELETE = "/delete/{id}";
+    public static final String USUARIO_GET_PERSONA = "/getPersonaByUsuario/{id}";
 }
