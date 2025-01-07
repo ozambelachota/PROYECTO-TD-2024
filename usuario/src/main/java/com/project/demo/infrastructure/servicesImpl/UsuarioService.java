@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.project.demo.application.services.IUsuarioService;
+import com.project.demo.domain.personaModel;
 import com.project.demo.domain.usuarioModel;
 import com.project.demo.infrastructure.repositories.IUsuarioRepository;
 
@@ -41,5 +42,9 @@ public class UsuarioService implements IUsuarioService{
     public List<usuarioModel> getAll() {
         return (List<usuarioModel>) repository.findAll();
     }
-    
+
+    @Override
+    public personaModel getPersonabyUser(int id) {
+        return repository.gerPersonabyUsuario(id);
+    }
 }
