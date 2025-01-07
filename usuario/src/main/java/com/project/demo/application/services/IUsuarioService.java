@@ -2,6 +2,7 @@ package com.project.demo.application.services;
 
 import java.util.List;
 
+import com.project.demo.domain.personaModel;
 import com.project.demo.domain.usuarioModel;
 
 public interface IUsuarioService {
@@ -10,4 +11,5 @@ public interface IUsuarioService {
     public boolean delete (int id);
     public usuarioModel getById (int id);
     public List<usuarioModel> getAll ();
+    public personaModel getPersonabyUser(int id);
 }
