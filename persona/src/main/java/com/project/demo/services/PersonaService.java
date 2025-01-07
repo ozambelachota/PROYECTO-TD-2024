@@ -3,6 +3,7 @@ package com.project.demo.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.project.demo.model.personaModel;
@@ -36,6 +37,7 @@ public class PersonaService implements IPersonaService{
     }
 
     @Override
+    @Cacheable("personas")
     public List<personaModel> getAll() {
         return (List<personaModel>) repository.findAll();
     }

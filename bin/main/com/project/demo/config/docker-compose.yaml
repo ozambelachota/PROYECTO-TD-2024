@@ -1,0 +1,21 @@
+services:
+  mysql-db:
+    image: mysql
+    container_name: mysql-db
+    ports:
+      - "3312:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: unu2024
+      MYSQL_DATABASE: DBProyecto-2024
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - mysql-network
+
+volumes:
+  db-data:  
+    driver: local
+
+networks:
+  mysql-network:
+    driver: bridge
