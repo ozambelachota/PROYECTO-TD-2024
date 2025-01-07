@@ -24,6 +24,12 @@ public class SolicitudModel {
     @Column(name = "comentario")
     public String comentario;
 
+    @Column(name= "estado")
+    public String  estado;
+
+    @Column(name= "tipo")
+    public String  tipo;    
+
 
 
     
