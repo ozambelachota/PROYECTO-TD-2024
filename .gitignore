@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 .codegpt
 .vscode 
@@ -6,3 +7,7 @@
 =======
 logs/
 >>>>>>> 252ea59 (feature: depuracion archivos)
+=======
+
+.codegpt
+>>>>>>> 9af9126 (agregacion de model)
