@@ -1,17 +1,17 @@
-package com.reunionconsejo.adapters;
+package com.reunion.adapters;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-
-import com.reunionconsejo.domain.ReunionConsejoModel;
-import com.reunionconsejo.domain.endpoints.ReunionConsejoEndpoint;
-import com.reunionconsejo.infrastructure.service.ReunionConsejoService;
-
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.reunion.domain.ReunionConsejoModel;
+import com.reunion.domain.endpoints.ReunionConsejoEndpoint;
+import com.reunion.infrastructure.service.ReunionConsejoService;
+
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -45,7 +45,7 @@ public class ReunionConsejoController {
     }
 
     @DeleteMapping(name =  ReunionConsejoEndpoint.reunionConsejoDelete)
-    public boolean delete(@PathVariable("id") int id){
+    public boolean delete(@PathVariable("id_reunion") int id){
         return serviceConsejo.delete(id);
     }
     

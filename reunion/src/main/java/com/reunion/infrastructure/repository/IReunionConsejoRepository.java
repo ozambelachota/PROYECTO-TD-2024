@@ -1,9 +1,9 @@
-package com.reunionconsejo.infrastructure.repository;
+package com.reunion.infrastructure.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.reunionconsejo.domain.ReunionConsejoModel;
+import com.reunion.domain.ReunionConsejoModel;
 
 @Repository
 public interface IReunionConsejoRepository extends CrudRepository<ReunionConsejoModel, Integer>{
