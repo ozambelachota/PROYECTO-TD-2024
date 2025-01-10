@@ -1,8 +1,8 @@
-package com.reunionconsejo.applications;
+package com.reunion.applications;
 
 import java.util.List;
 
-import com.reunionconsejo.domain.ReunionConsejoModel;
+import com.reunion.domain.ReunionConsejoModel;
 
 public interface IReunionConsejoService {
     public ReunionConsejoModel add (ReunionConsejoModel model);
