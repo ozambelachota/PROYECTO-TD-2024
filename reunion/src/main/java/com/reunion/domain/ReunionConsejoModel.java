@@ -13,7 +13,10 @@ import jakarta.persistence.Table;
 @Table(name = "reunion_consejo")
 public class ReunionConsejoModel {
     @Id
+<<<<<<< HEAD
 <<<<<<< Updated upstream:reunion/src/main/java/com/reunionconsejo/domain/ReunionConsejoModel.java
+=======
+>>>>>>> 8737a2c (Avance de REunion Miembro Controller,Model Repository)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "id_reunion")
@@ -21,6 +24,7 @@ public class ReunionConsejoModel {
 
     @Column(name = "fecha")
     private Date fecha;
+<<<<<<< HEAD
 =======
     
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -60,4 +64,7 @@ public class ReunionConsejoModel {
 
     
     
+=======
+
+>>>>>>> 8737a2c (Avance de REunion Miembro Controller,Model Repository)
 }
