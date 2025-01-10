@@ -1,11 +1,11 @@
-package com.reunionconsejo.infrastructure.service;
+package com.reunion.infrastructure.service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.reunionconsejo.applications.IReunionConsejoService;
-import com.reunionconsejo.domain.ReunionConsejoModel;
-import com.reunionconsejo.infrastructure.repository.IReunionConsejoRepository;
+import com.reunion.applications.IReunionConsejoService;
+import com.reunion.domain.ReunionConsejoModel;
+import com.reunion.infrastructure.repository.IReunionConsejoRepository;
 
 @Service
 public class ReunionConsejoService implements IReunionConsejoService{
