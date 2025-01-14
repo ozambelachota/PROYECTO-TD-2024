@@ -16,15 +16,24 @@ public class ResolucionController {
 
   @Autowired
   private ResolucionService resolucionService;
-    @Autowired
-    private ResourcePatternResolver resourcePatternResolver;
+
+
 
   @GetMapping(value = ApiEndpoint.GET_ALL_RESOLUCION)
   public ResponseEntity<?> getAllResolucion() {
+    if (resolucionService.findResolucionAll().isEmpty()) {
+      throw new IllegalArgumentException("No existen resoluciones");
+    }
     return new ResponseEntity<>(resolucionService.findResolucionAll(), HttpStatus.OK);
   }
   @PostMapping(value = ApiEndpoint.CREATE_RESOLUCION)
   public ResponseEntity<?> create(@RequestBody Resolucion resolucion) {
+    if(resolucion.equals(null)){
+      throw new IllegalArgumentException("La resolucion no puede ser nula");
+    }
+    if (resolucion.getArchivo() == null) {
+      throw new IllegalArgumentException("El archivo no puede ser nulo");
+    }
     return new ResponseEntity<>(
       resolucionService.saveResolucion(resolucion),
       HttpStatus.CREATED
@@ -46,6 +55,9 @@ public class ResolucionController {
     resolucionUpdate.setTitulo(resolucion.getTitulo());
     resolucionUpdate.setEliminacionFecha(resolucion.getEliminacionFecha());
     resolucionUpdate.setEliminacionUsuario(resolucion.getEliminacionUsuario());
+    if (resolucion.getArchivo() == null) {
+      throw new IllegalArgumentException("El archivo no puede ser nulo");
+    }
     return new ResponseEntity<>(
       resolucionService.saveResolucion(resolucionUpdate),
       HttpStatus.OK
