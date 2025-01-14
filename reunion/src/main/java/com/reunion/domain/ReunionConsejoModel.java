@@ -30,9 +30,6 @@ public class ReunionConsejoModel {
         this.id_reunion = id_reunion;
     }
 
-    public Date getFecha() {
-        return fecha;
-    }
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
