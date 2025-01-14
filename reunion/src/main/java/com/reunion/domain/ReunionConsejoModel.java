@@ -1,4 +1,4 @@
-package com.reunion.domain;
+package com.reunionconsejo.domain;
 
 import java.sql.Date;
 
@@ -13,14 +13,22 @@ import jakarta.persistence.Table;
 @Table(name = "reunion_consejo")
 public class ReunionConsejoModel {
     @Id
+<<<<<<< Updated upstream:reunion/src/main/java/com/reunionconsejo/domain/ReunionConsejoModel.java
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     @Column(name = "id_reunion")
     private Long id_reunion;
 
     @Column(name = "fecha")
     private Date fecha;
+=======
+    
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name = "id_reunion")
+    private Long id_reunion;
+    @Column(name = "fecha")
+    private Date fecha;
 
+>>>>>>> Stashed changes:reunion/src/main/java/com/reunion/domain/ReunionConsejoModel.java
 
     public Long getId_reunion() {
         return id_reunion;
@@ -30,14 +38,15 @@ public class ReunionConsejoModel {
         this.id_reunion = id_reunion;
     }
 
-    public Date getFecha() {
-        return fecha;
-    }
-
+<<<<<<< Updated upstream:reunion/src/main/java/com/reunionconsejo/domain/ReunionConsejoModel.java
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 
-    
-    
+=======
+>>>>>>> Stashed changes:reunion/src/main/java/com/reunion/domain/ReunionConsejoModel.java
+    public Date getFecha() {
+        return fecha;
+    }
+
 }
