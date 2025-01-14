@@ -1,8 +1,18 @@
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:usuario/src/main/java/com/project/demo/shared/exceptions/exepcionController.java
+>>>>>>> 7e7f197 (avance del  proyecto)
 <<<<<<<< HEAD:reunion/src/main/java/com/reunion/shared/exception/exepcionController.java
 package com.reunion.shared.exception;
 ========
 package com.project.demo.shared.exceptions;
 >>>>>>>> af798b7 (feature: files reorganized):usuario/src/main/java/com/project/demo/shared/exceptions/exepcionController.java
+<<<<<<< HEAD
+=======
+========
+package com.reunion.shared.exception;
+>>>>>>>> 7e7f197 (avance del  proyecto):reunion/src/main/java/com/reunion/shared/exception/exepcionController.java
+>>>>>>> 7e7f197 (avance del  proyecto)
 
 import java.util.HashMap;
 import java.util.Map;
