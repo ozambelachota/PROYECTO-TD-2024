@@ -1,4 +1,4 @@
-package com.project.demo.shared.exceptions;
+package com.reunion.shared.exception;
 
 import java.util.HashMap;
 import java.util.Map;
