@@ -24,17 +24,27 @@ public class SolicitudService implements ISolicitudService {
   }
 
   @Override
-  public void deleteSolicitud(Integer id_resolucion) {
-    solicitudRepository.deleteById(id_resolucion);
+  public boolean deleteSolicitud(Integer id_solicitud) {
+    var solicitud = solicitudRepository.findById(id_solicitud);
+    if (solicitud.isPresent()) {
+      solicitudRepository.deleteById(id_solicitud);
+      return true;
+    }
+
+    return  false;
   }
 
   @Override
-  public Solicitud findSolicitudById(Integer id_resolucion) {
-    return solicitudRepository.findById(id_resolucion).orElse(null);
+  public Solicitud findSolicitudById(Integer id_solicitud) {
+    return solicitudRepository.findById(id_solicitud).orElse(null);
   }
 
   @Override
   public Solicitud updateSolicitud(Solicitud solicitud) {
-    return solicitudRepository.save(solicitud);
+    var solicitudDB = solicitudRepository.findById(solicitud.getId_resolucion());
+    if (solicitudDB.isPresent()) {
+      return solicitudRepository.save(solicitud);
+    }
+    return null;
   }
 }

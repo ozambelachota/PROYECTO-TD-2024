@@ -30,7 +30,12 @@ public class ArchivoService implements IArchivoService {
   }
 
   @Override
-  public void deleteArchivo(Integer id_archivo) {
-    archivoRepoository.deleteById(id_archivo);
+  public boolean deleteArchivo(Integer id_archivo) {
+    var archivo = archivoRepoository.findById(id_archivo);
+    if (archivo.isPresent()) {
+      archivoRepoository.deleteById(id_archivo);
+      return true;
+    }
+    return false;
   }
 }

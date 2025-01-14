@@ -6,15 +6,15 @@ import com.resolucion.resolucion.domain.Decano;
 
 public interface IDecanoService {
 
-  public List<Decano> findDecanoAll();
+  List<Decano> findDecanoAll();
 
-  public Decano saveDecano(Decano decano);
+  Decano saveDecano(Decano decano);
 
-  public void deleteDecano(Integer id_resolucion);
+  boolean deleteDecano(Integer id_decano);
 
-  public Decano findDecanoById(Integer id_resolucion);
+  Decano findDecanoById(Integer id_decano);
 
-  public Decano updateDecano(Decano decano);
+  Decano updateDecano(Decano decano);
 
   
 }

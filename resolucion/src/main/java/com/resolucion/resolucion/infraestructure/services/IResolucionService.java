@@ -4,11 +4,13 @@ import com.resolucion.resolucion.domain.Resolucion;
 import java.util.List;
 
 public interface IResolucionService {
-  public List<Resolucion> findResolucionAll();
+  List<Resolucion> findResolucionAll();
 
-  public Resolucion findResolucionById(Integer id_resolucion);
+  Resolucion findResolucionById(Integer id_resolucion);
 
-  public Resolucion saveResolucion(Resolucion resolucion);
+  Resolucion saveResolucion(Resolucion resolucion);
 
-  public void deleteResolucion(Integer id_resolucion);
+  boolean deleteResolucion(Integer id_resolucion);
+
+  Resolucion updateResolucion(Resolucion resolucion);
 }

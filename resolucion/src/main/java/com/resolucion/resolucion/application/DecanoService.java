@@ -3,6 +3,7 @@ package com.resolucion.resolucion.application;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import org.springframework.stereotype.Service;
 
 import com.resolucion.resolucion.domain.Decano;
@@ -14,6 +15,7 @@ public class DecanoService implements IDecanoService {
 
   @Autowired
   private IDecanoRepository decanoRepository;
+
   @Override
   public List<Decano> findDecanoAll() {
   
@@ -27,9 +29,13 @@ public class DecanoService implements IDecanoService {
   }
 
   @Override
-  public void deleteDecano(Integer id_resolucion) {
-
-    decanoRepository.deleteById(id_resolucion);
+  public boolean deleteDecano(Integer id_decano) {
+    var decano = decanoRepository.findById(id_decano);
+    if (decano.isPresent()) {
+      decanoRepository.deleteById(decano.get().getIdDecano());
+      return  true;
+    }
+    return false;
   }
 
   @Override
@@ -40,6 +46,10 @@ public class DecanoService implements IDecanoService {
 
   @Override
   public Decano updateDecano(Decano decano) {
-
-    return decanoRepository.save(decano);
-  }}
+    var decanoUpdate = decanoRepository.findById(decano.getIdDecano());
+    if (decanoUpdate.isPresent()) {
+      return decanoRepository.save(decano);
+    }
+    return null;
+  }
+}

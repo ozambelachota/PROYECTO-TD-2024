@@ -6,12 +6,12 @@ import com.resolucion.resolucion.domain.Archivo;
 
 public  interface IArchivoService {
 
-  public List<Archivo> findArchivoAll();
+  List<Archivo> findArchivoAll();
 
-  public Archivo findArchivoById(Integer id_archivo);
+  Archivo findArchivoById(Integer id_archivo);
 
-  public Archivo saveArchivo(Archivo archivo);
+  Archivo saveArchivo(Archivo archivo);
 
-  public void deleteArchivo(Integer id_archivo);
+  boolean deleteArchivo(Integer id_archivo);
 
 }

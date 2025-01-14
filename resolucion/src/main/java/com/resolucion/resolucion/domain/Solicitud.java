@@ -27,19 +27,19 @@ public class Solicitud {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id_resolucion;
 
-  @Column(name = "fecha")
+  @Column(name = "fecha", nullable = false)
   private Date fecha;
 
-  @Column(name = "comentario")
+  @Column(name = "comentario", nullable = false)
   private String comentario;
 
-  @Column(name = "estado")
+  @Column(name = "estado", nullable = false)
   private String estado;
 
-  @Column(name = "fase")
+  @Column(name = "fase", nullable = false)
   private String fase;
 
-  @Column(name = "tipo")
+  @Column(name = "tipo", nullable = false)
   private String tipo;
 
   @Column(name = "creado_usuario", nullable = true)

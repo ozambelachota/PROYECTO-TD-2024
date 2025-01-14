@@ -4,13 +4,13 @@ import com.resolucion.resolucion.domain.Solicitud;
 import java.util.List;
 
 public interface ISolicitudService {
-  public List<Solicitud> findSolicitudAll();
+  List<Solicitud> findSolicitudAll();
 
-  public Solicitud saveSolicitud(Solicitud solicitud);
+  Solicitud saveSolicitud(Solicitud solicitud);
 
-  public void deleteSolicitud(Integer id_resolucion);
+  boolean deleteSolicitud(Integer id_solicitud);
 
-  public Solicitud findSolicitudById(Integer id_resolucion);
+  Solicitud findSolicitudById(Integer id_solicitud);
 
-  public Solicitud updateSolicitud(Solicitud solicitud);
+  Solicitud updateSolicitud(Solicitud solicitud);
 }

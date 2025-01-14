@@ -29,7 +29,21 @@ public class ResolucionService implements IResolucionService {
   }
 
   @Override
-  public void deleteResolucion(Integer id_resolucion) {
-    resolucionRepository.deleteById(id_resolucion);
+  public boolean deleteResolucion(Integer id_resolucion) {
+    var resolucion = resolucionRepository.findById(id_resolucion);
+    if (resolucion.isPresent()) {
+      resolucionRepository.deleteById(id_resolucion);
+      return true;
+    }
+    return false;
+  }
+
+  @Override
+  public Resolucion updateResolucion(Resolucion resolucion) {
+    var resolucionDB = resolucionRepository.findById(resolucion.getId_resolucion());
+    if (resolucionDB.isPresent()) {
+      return resolucionRepository.save(resolucion);
+    }
+    return null;
   }
 }
