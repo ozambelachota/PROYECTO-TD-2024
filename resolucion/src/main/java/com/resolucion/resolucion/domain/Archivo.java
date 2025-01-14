@@ -7,9 +7,19 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.sql.Date;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "archivo")
+@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Archivo {
 
   @Id
@@ -24,21 +34,22 @@ public class Archivo {
 
   @Column(name = "estado")
   private char estado;
+
   @Column(name = "creado_usuario", nullable = true)
   private Integer creadoUsuario;
-  
+
   @Column(name = "creado_fecha", nullable = true)
   private Date creadoFecha;
-  
+
   @Column(name = "modificado_usuario", nullable = true)
   private Integer modificadoUsuario;
-  
+
   @Column(name = "modificado_fecha", nullable = true)
   private Date modificadoFecha;
-  
+
   @Column(name = "eliminacion_usuario", nullable = true)
   private Integer eliminacionUsuario;
-  
+
   @Column(name = "eliminacion_fecha", nullable = true)
   private Date eliminacionFecha;
 }

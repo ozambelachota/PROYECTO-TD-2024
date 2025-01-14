@@ -7,11 +7,20 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.sql.Date;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "solicitud")
 @Data
+@Getter
+@Setter 
+@AllArgsConstructor
+@NoArgsConstructor 
 public class Solicitud {
 
   @Id
@@ -21,7 +30,7 @@ public class Solicitud {
   @Column(name = "fecha")
   private Date fecha;
 
-  @Column(name = "comentarios")
+  @Column(name = "comentario")
   private String comentario;
 
   @Column(name = "estado")
@@ -33,21 +42,21 @@ public class Solicitud {
   @Column(name = "tipo")
   private String tipo;
 
-  @Column(name = "creado_usuario")
+  @Column(name = "creado_usuario", nullable = true)
   private Integer creadoUsuario;
 
-  @Column(name = "creado_fecha")
+  @Column(name = "creado_fecha", nullable = true)
   private Date creadoFecha;
 
-  @Column(name = "modificado_usuario")
+  @Column(name = "modificado_usuario", nullable = true)
   private Integer modificadoUsuario;
 
-  @Column(name = "modificado_fecha")
+  @Column(name = "modificado_fecha", nullable = true)
   private Date modificadoFecha;
 
-  @Column(name = "eliminacion_usuario")
+  @Column(name = "eliminacion_usuario", nullable = true)
   private Integer eliminacionUsuario;
 
-  @Column(name = "eliminacion_fecha")
+  @Column(name = "eliminacion_fecha", nullable = true)
   private Date eliminacionFecha;
 }
