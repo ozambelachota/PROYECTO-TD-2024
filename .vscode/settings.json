@@ -1,4 +1,15 @@
 {
+<<<<<<< HEAD
   "java.compile.nullAnalysis.mode": "disabled",
   "java.configuration.updateBuildConfiguration": "interactive"
 }
+=======
+<<<<<<< HEAD
+    "CodeGPT.apiKey": "CodeGPT Plus Beta"
+}
+=======
+  "java.compile.nullAnalysis.mode": "disabled",
+  "java.configuration.updateBuildConfiguration": "interactive"
+}
+>>>>>>> ce51948 (feat: add controller resolucion)
+>>>>>>> 9a03a64 (feat: add shared globalexception)
