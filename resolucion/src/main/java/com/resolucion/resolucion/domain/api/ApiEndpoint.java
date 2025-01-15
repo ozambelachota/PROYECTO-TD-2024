@@ -2,7 +2,6 @@ package com.resolucion.resolucion.domain.api;
 
 public class ApiEndpoint {
   public static final String API_BASE_URL_RESOLUCION = "api/v1/resolucion/";
-<<<<<<< HEAD
   public static final String API_BASE_URL_ARCHIVO = "api/v1/archivo/";
   public static final String API_BASE_URL_SOLICITUD = "api/v1/solicitud/";
   public static final String API_BASE_URL_DECANO = "api/v1/decano/";
@@ -27,7 +26,4 @@ public class ApiEndpoint {
   public static final String CREATE_DECANO = "create";
   public static final String UPDATE_DECANO = "update/{id_decano}";
   public static final String DELETE_DECANO = "delete/{id_decano}";
-=======
-  public static final String GET_ALL_RESOLUCION = "list";
->>>>>>> 9a03a64 (feat: add shared globalexception)
 }

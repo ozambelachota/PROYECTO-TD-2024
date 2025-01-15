@@ -1,14 +1,11 @@
 package com.resolucion.resolucion.application;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.web.config.EnableSpringDataWebSupport;
-import org.springframework.stereotype.Service;
-
 import com.resolucion.resolucion.domain.Decano;
 import com.resolucion.resolucion.infraestructure.repository.IDecanoRepository;
 import com.resolucion.resolucion.infraestructure.services.IDecanoService;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class DecanoService implements IDecanoService {
@@ -18,13 +15,11 @@ public class DecanoService implements IDecanoService {
 
   @Override
   public List<Decano> findDecanoAll() {
-  
     return (List<Decano>) decanoRepository.findAll();
   }
 
   @Override
   public Decano saveDecano(Decano decano) {
-
     return decanoRepository.save(decano);
   }
 
@@ -33,14 +28,13 @@ public class DecanoService implements IDecanoService {
     var decano = decanoRepository.findById(id_decano);
     if (decano.isPresent()) {
       decanoRepository.deleteById(decano.get().getIdDecano());
-      return  true;
+      return true;
     }
     return false;
   }
 
   @Override
   public Decano findDecanoById(Integer id_resolucion) {
-
     return decanoRepository.findById(id_resolucion).orElse(null);
   }
 
