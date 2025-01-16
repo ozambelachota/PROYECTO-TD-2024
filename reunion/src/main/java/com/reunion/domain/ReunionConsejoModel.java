@@ -29,13 +29,11 @@ public class ReunionConsejoModel {
         this.id_reunion = id_reunion;
     }
 
-<<<<<<< Updated upstream:reunion/src/main/java/com/reunionconsejo/domain/ReunionConsejoModel.java
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 
-=======
->>>>>>> Stashed changes:reunion/src/main/java/com/reunion/domain/ReunionConsejoModel.java
+
     public Date getFecha() {
         return fecha;
     }
