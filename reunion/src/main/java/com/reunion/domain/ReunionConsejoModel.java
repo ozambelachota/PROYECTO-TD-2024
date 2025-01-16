@@ -13,22 +13,13 @@ import jakarta.persistence.Table;
 @Table(name = "reunion_consejo")
 public class ReunionConsejoModel {
     @Id
-<<<<<<< Updated upstream:reunion/src/main/java/com/reunionconsejo/domain/ReunionConsejoModel.java
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_reunion")
     private Long id_reunion;
 
     @Column(name = "fecha")
     private Date fecha;
-=======
-    
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name = "id_reunion")
-    private Long id_reunion;
-    @Column(name = "fecha")
-    private Date fecha;
-
->>>>>>> Stashed changes:reunion/src/main/java/com/reunion/domain/ReunionConsejoModel.java
 
     public Long getId_reunion() {
         return id_reunion;
