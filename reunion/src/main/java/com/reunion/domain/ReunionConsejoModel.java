@@ -13,15 +13,15 @@ import jakarta.persistence.Table;
 @Table(name = "reunion_consejo")
 public class ReunionConsejoModel {
     @Id
+<<<<<<< HEAD
 <<<<<<< Updated upstream:reunion/src/main/java/com/reunionconsejo/domain/ReunionConsejoModel.java
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "id_reunion")
     private Long id_reunion;
-
-    @Column(name = "fecha")
-    private Date fecha;
 =======
+>>>>>>> 2d944ff (eliminacion)
+
     
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id_reunion")
@@ -29,9 +29,12 @@ public class ReunionConsejoModel {
     @Column(name = "fecha")
     private Date fecha;
 
+<<<<<<< HEAD
 >>>>>>> Stashed changes:reunion/src/main/java/com/reunion/domain/ReunionConsejoModel.java
 
 
+=======
+>>>>>>> 2d944ff (eliminacion)
     public Long getId_reunion() {
         return id_reunion;
     }
@@ -39,6 +42,7 @@ public class ReunionConsejoModel {
     public void setId_reunion(Long id_reunion) {
         this.id_reunion = id_reunion;
     }
+<<<<<<< HEAD
 
 <<<<<<< HEAD:reunion/src/main/java/com/reunion/domain/ReunionConsejoModel.java
 =======
@@ -50,6 +54,8 @@ public class ReunionConsejoModel {
 =======
 >>>>>>> Stashed changes:reunion/src/main/java/com/reunion/domain/ReunionConsejoModel.java
 >>>>>>> 77792ef (actualizacion):reunion/src/main/java/com/reunionconsejo/domain/ReunionConsejoModel.java
+=======
+>>>>>>> 2d944ff (eliminacion)
     public Date getFecha() {
         return fecha;
     }
@@ -58,6 +64,10 @@ public class ReunionConsejoModel {
         this.fecha = fecha;
     }
 
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 2d944ff (eliminacion)
     
 }
