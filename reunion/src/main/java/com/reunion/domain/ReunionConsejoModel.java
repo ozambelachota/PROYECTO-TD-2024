@@ -1,4 +1,4 @@
-package com.reunionconsejo.domain;
+package com.reunion.domain;
 
 import java.sql.Date;
 
