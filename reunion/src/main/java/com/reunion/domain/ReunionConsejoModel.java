@@ -12,30 +12,37 @@ import jakarta.persistence.Table;
 @Entity()
 @Table(name = "reunion_consejo")
 public class ReunionConsejoModel {
-    @Id
-
-    
+    @Id    
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name = "id_reunion")
     private Long id_reunion;
+
     @Column(name = "fecha")
     private Date fecha;
 
-    public Long getId_reunion() {
-        return id_reunion;
-    }
-
-    public void setId_reunion(Long id_reunion) {
-        this.id_reunion = id_reunion;
-    }
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-
-
+    @Column(name = "tema")
+    private String tema;
     
+    @Column(name = "tipo")
+    private String tipo;
+
+    @Column(name = "estado")
+    private char estado;
+
+    @Column(name = "creado_usuario")
+    private Integer creadoUsuario;
+
+    @Column(name = "creado_fecha")
+    private Date creadoFecha;
+  
+    @Column(name = "modificado_usuario")
+    private Integer modificadoUsuario;
+  
+    @Column(name = "modificado_fecha")
+    private Date modificadoFecha;
+  
+    @Column(name = "eliminacion_usuario")
+    private Integer eliminacionUsuario;
+
+    @Column(name = "eliminacion_fecha")
+    private Date eliminacionFecha;
 }
