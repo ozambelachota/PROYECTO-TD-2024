@@ -24,13 +24,29 @@ public class DecanoController {
   }
   @PostMapping(value = ApiEndpoint.CREATE_DECANO)
   public ResponseEntity<?> create(@RequestBody Decano decano) {
-    return new ResponseEntity<>(
+    if(decano == null){throw new IllegalArgumentException("El decano no puede ser nulo");}
+      return new ResponseEntity<>(
       decanoService.saveDecano(decano),
       HttpStatus.CREATED
     );
   }
   @PutMapping(value = ApiEndpoint.UPDATE_DECANO)
-  public ResponseEntity<?> update(@PathVariable(value = "id_resolucion") Integer id_resolucion,@RequestBody Decano decano) {
+  public ResponseEntity<?> update(@PathVariable(value = "id_decano") Integer id_decano,@RequestBody Decano decano) {
+    if(decano == null){throw new IllegalArgumentException("El decano no puede ser nulo");}
+    if(id_decano == null){throw new IllegalArgumentException("El id de la resolucion no puede ser nulo");}
+
+    Decano decanoUpdate = new Decano();
+    decanoUpdate.setIdDecano(id_decano);
+    decanoUpdate.setEstado(decano.getEstado());
+    decanoUpdate.setResolucion(decano.getResolucion());
+    decanoUpdate.setCreadoFecha(decano.getCreadoFecha());
+    decanoUpdate.setCreadoUsuario(decano.getCreadoUsuario());
+    decanoUpdate.setModificadoFecha(decano.getModificadoFecha());
+    decanoUpdate.setModificadoUsuario(decano.getModificadoUsuario());
+    decanoUpdate.setEliminacionFecha(decano.getEliminacionFecha());
+    decanoUpdate.setEliminacionUsuario(decano.getEliminacionUsuario());
+
+
     return new ResponseEntity<>(
       decanoService.updateDecano(decano),
       HttpStatus.OK
@@ -38,11 +54,11 @@ public class DecanoController {
   }
   @DeleteMapping(value = ApiEndpoint.DELETE_DECANO)
   public ResponseEntity<?> delete(
-    @PathVariable(value = "id_resolucion") Integer id_resolucion
+    @PathVariable(value = "id_decano") Integer id_decano
   ) {
-    if (decanoService.deleteDecano(id_resolucion)) {
+    if (decanoService.deleteDecano(id_decano)) {
       return new ResponseEntity<>(HttpStatus.OK);
     }
-    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    throw new IllegalArgumentException("No se pudo eliminar el decano");
   }
 }

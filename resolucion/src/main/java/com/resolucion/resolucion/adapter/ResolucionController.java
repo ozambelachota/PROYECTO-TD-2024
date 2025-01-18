@@ -15,8 +15,6 @@ public class ResolucionController {
   @Autowired
   private ResolucionService resolucionService;
 
-
-
   @GetMapping(value = ApiEndpoint.GET_ALL_RESOLUCION)
   public ResponseEntity<?> getAllResolucion() {
     if (resolucionService.findResolucionAll().isEmpty()) {
@@ -56,6 +54,12 @@ public class ResolucionController {
     if (resolucion.getArchivo() == null) {
       throw new IllegalArgumentException("El archivo no puede ser nulo");
     }
+    if(resolucion.equals(null)){
+      throw new IllegalArgumentException("La resolucion no puede ser nula");
+    }
+    if(id_resolucion == null){
+      throw new IllegalArgumentException("El id de la resolucion no puede ser nulo");
+    }
     return new ResponseEntity<>(
       resolucionService.saveResolucion(resolucionUpdate),
       HttpStatus.OK
@@ -67,8 +71,8 @@ public class ResolucionController {
   ) {
     if (resolucionService.deleteResolucion(id_resolucion)) {
       return new ResponseEntity<>(HttpStatus.OK);
+    }else{
+      return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
-
-    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
   }
 }

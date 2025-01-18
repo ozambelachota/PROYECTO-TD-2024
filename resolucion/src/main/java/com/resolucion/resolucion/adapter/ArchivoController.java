@@ -30,7 +30,7 @@ public class ArchivoController {
   }
   @PutMapping(value = ApiEndpoint.UPDATE_ARCHIVO)
   public ResponseEntity<?> update(@PathVariable(value = "id_archivo") Integer id_archivo,@RequestBody Archivo archivo) {
-      var archivoUpdate = new Archivo();
+      Archivo archivoUpdate = new Archivo();
       archivoUpdate.setId_archivo(id_archivo);
       archivoUpdate.setLink(archivo.getLink());
       archivoUpdate.setNaturaleza(archivo.getNaturaleza());
@@ -41,6 +41,9 @@ public class ArchivoController {
       archivoUpdate.setModificadoFecha(archivo.getModificadoFecha());
       archivoUpdate.setEliminacionUsuario(archivo.getEliminacionUsuario());
       archivoUpdate.setEliminacionFecha(archivo.getEliminacionFecha());
+      if (archivoUpdate == null) {
+          throw new IllegalArgumentException("El archivo no puede ser nulo");
+        }
 
       return new ResponseEntity<>(
       archivoService.saveArchivo(archivoUpdate),

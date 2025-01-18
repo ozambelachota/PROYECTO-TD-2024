@@ -25,6 +25,7 @@ public class SolicitudController {
 
   @PostMapping(value = ApiEndpoint.CREATE_SOLICITUD)
   public ResponseEntity<?> create(@RequestBody Solicitud solicitud) {
+    if(solicitud == null){throw new IllegalArgumentException("La solicitud no puede ser nula");}
     return new ResponseEntity<>(
       solicitudService.saveSolicitud(solicitud),
       HttpStatus.CREATED
@@ -44,6 +45,9 @@ public class SolicitudController {
     solicitudUpdate.setCreadoUsuario(solicitud.getCreadoUsuario());
     solicitudUpdate.setModificadoFecha(solicitud.getModificadoFecha());
     solicitudUpdate.setModificadoUsuario(solicitud.getModificadoUsuario());
+    if(solicitud.equals(null)){throw new IllegalArgumentException("La solicitud no puede ser nula");}
+    if(solicitud.getComentario() == null){throw new IllegalArgumentException("El comentario no puede ser nulo");}
+    if(solicitud.getEstado() == null){throw new IllegalArgumentException("El estado no puede ser nulo");}
 
     return new ResponseEntity<>(
       solicitudService.updateSolicitud(solicitud),
@@ -57,6 +61,6 @@ public class SolicitudController {
     if (solicitudService.deleteSolicitud(idSolicitud)) {
       return new ResponseEntity<>(HttpStatus.OK);
     }
-    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    throw new IllegalArgumentException("No se pudo eliminar la solicitud");
   }
 }
