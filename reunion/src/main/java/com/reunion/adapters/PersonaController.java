@@ -17,7 +17,7 @@ import com.reunion.domain.endpoints.APIEndPoint;
 import com.reunion.infrastructure.service.PersonaService;
 
 @RestController
-@RequestMapping(value = APIEndPoint.personaBasic)
+@RequestMapping(value= APIEndPoint.personaBasic)
 public class PersonaController {
 
     @Autowired
@@ -28,16 +28,16 @@ public class PersonaController {
         return servicePersona.getAll();
     }
 
-    @PostMapping(value =  APIEndPoint.personaCreate)
+    @PostMapping(value = APIEndPoint.personaCreate)
     public PersonaModel create(@RequestBody PersonaModel model){
         return servicePersona.add(model);
     }
-    @GetMapping(value =  APIEndPoint.personaBuscarID)
+    @GetMapping(value = APIEndPoint.personaBuscarID)
     public PersonaModel getById(@PathVariable("id_persona") int id){
         return servicePersona.getById(id);
     }
 
-    @PutMapping(value =  APIEndPoint.personaUpdate)
+    @PutMapping(value = APIEndPoint.personaUpdate)
     public PersonaModel update(@RequestBody PersonaModel model){
         return servicePersona.update(model);
     }

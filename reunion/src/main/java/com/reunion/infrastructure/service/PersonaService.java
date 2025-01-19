@@ -14,7 +14,13 @@ public class PersonaService implements IPersonaService {
     IPersonaRepository repository;
     @Override
     public PersonaModel add(PersonaModel model) {
-        return repository.save(model);
+        try {return repository.save(model);
+            
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+        
     }
     @Override
     public PersonaModel update(PersonaModel model) {
