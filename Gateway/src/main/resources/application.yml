@@ -44,4 +44,6 @@ spring:
           - Path=/catalgo/**
         filters:
           - StripPrefix=1
-          - JwtAuthenticationFilter    
+          - JwtAuthenticationFilter   
+          
+
