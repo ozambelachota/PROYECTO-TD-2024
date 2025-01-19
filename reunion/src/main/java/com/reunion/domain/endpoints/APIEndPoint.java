@@ -18,7 +18,7 @@ public static final String reunionMiembroGetAll = "getAll";
     public static final String reunionMiembroDelete = "delete/{id_reunion_miembro}";
 
     public static final String personaGetAll = "getAll";
-    public static final String personaCreate = "create";
+    public static final String personaCreate = "crearpersona";
     public static final String personaBuscarID = "getById/{id_persona}";
     public static final String personaUpdate = "update";
     public static final String personaDelete = "delete/{id_persona}";
