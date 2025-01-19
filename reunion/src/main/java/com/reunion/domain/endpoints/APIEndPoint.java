@@ -13,9 +13,9 @@ public static final String reunionConsejoDelete = "delete/{id_reunion}";
 
 public static final String reunionMiembroGetAll = "getAll";
     public static final String reunionMiembroCreate = "create";
-    public static final String reunionMiembroBuscarID = "getById/{id_reunion_miembro}";
+    public static final String reunionMiembroBuscarID = "getById/{id_reunionmiembro}";
     public static final String reunionMiembroUpdate = "update";
-    public static final String reunionMiembroDelete = "delete/{id_reunion_miembro}";
+    public static final String reunionMiembroDelete = "delete/{id_reunionmiembro}";
 
     public static final String personaGetAll = "getAll";
     public static final String personaCreate = "crearpersona";

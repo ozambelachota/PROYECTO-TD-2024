@@ -26,7 +26,7 @@ import lombok.Setter;
 public class ReunionMiembroModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_reunion_miembro;
+    private Long id_reunionmiembro;
 
     @Column(name = "estado")
     private char estado;

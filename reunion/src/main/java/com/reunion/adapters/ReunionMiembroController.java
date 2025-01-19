@@ -33,8 +33,8 @@ public class ReunionMiembroController {
         return serviceMiembro.add(model);
     }
     @GetMapping(value =  APIEndPoint.reunionMiembroBuscarID)
-    public ReunionMiembroModel getById(@PathVariable("id_reunionmiembro") int idMiembro){
-        return serviceMiembro.getById(idMiembro);
+    public ReunionMiembroModel getById(@PathVariable("id_reunionmiembro") int id){
+        return serviceMiembro.getById(id);
     }
 
     @PutMapping(value =  APIEndPoint.reunionMiembroUpdate)
@@ -43,7 +43,7 @@ public class ReunionMiembroController {
     }
 
     @DeleteMapping(value =  APIEndPoint.reunionMiembroDelete)
-    public boolean delete(@PathVariable("id_reunion_miembro") int idMiembro){
-        return serviceMiembro.delete(idMiembro);
+    public boolean delete(@PathVariable("id_reunionmiembro") int id){
+        return serviceMiembro.delete(id);
     }
 }
