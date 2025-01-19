@@ -1,6 +1,9 @@
 package com.resolucion.resolucion.application;
 
 import com.resolucion.resolucion.domain.Resolucion;
+import com.resolucion.resolucion.domain.dto.resolucion.ResolucionDTO;
+import com.resolucion.resolucion.domain.dto.resolucion.ResolucionSaveDTO;
+import com.resolucion.resolucion.domain.mapper.ResolucionMapper;
 import com.resolucion.resolucion.infraestructure.repository.IResolucionRepository;
 import com.resolucion.resolucion.infraestructure.services.IResolucionService;
 import java.util.List;
@@ -12,6 +15,7 @@ public class ResolucionService implements IResolucionService {
 
   @Autowired
   private IResolucionRepository resolucionRepository;
+
 
   @Override
   public List<Resolucion> findResolucionAll() {
@@ -42,7 +46,8 @@ public class ResolucionService implements IResolucionService {
   public Resolucion updateResolucion(Resolucion resolucion) {
     var resolucionDB = resolucionRepository.findById(resolucion.getId_resolucion());
     if (resolucionDB.isPresent()) {
-      return resolucionRepository.save(resolucion);
+      Resolucion updatedResolucion = resolucionRepository.save(resolucion);
+      return updatedResolucion;
     }
     return null;
   }

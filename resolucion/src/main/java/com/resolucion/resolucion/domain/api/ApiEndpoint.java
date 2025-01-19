@@ -19,7 +19,7 @@ public class ApiEndpoint {
   public static final String GET_ALL_SOLICITUD = "list";
   public static final String GET_SOLICITUD_BY_ID = "get/{id_resolucion}";
   public static final String CREATE_SOLICITUD = "create";
-  public static final String UPDATE_SOLICITUD = "update/{id_resolucion}";
+  public static final String UPDATE_SOLICITUD = "update/{id_solicitud}";
   public static final String DELETE_SOLICITUD = "delete/{id_solicitud}"; 
   public static final String GET_ALL_DECANO = "list";
   public static final String GET_DECANO_BY_ID = "get/{id_decano}";

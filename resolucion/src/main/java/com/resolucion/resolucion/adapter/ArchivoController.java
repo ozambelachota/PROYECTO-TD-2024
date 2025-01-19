@@ -18,11 +18,19 @@ public class ArchivoController {
   @GetMapping(value = ApiEndpoint.GET_ALL_ARCHIVO)
   public ResponseEntity<?> getAll() {
     var archivos = archivoService.findArchivoAll();
+    if (archivos.isEmpty()) {
+      throw new IllegalArgumentException("No existen archivos");
+    }
+
     return new ResponseEntity<>(archivos, HttpStatus.OK);
   }
 
   @PostMapping(value = ApiEndpoint.CREATE_ARCHIVO)
   public ResponseEntity<?> create(@RequestBody Archivo archivo) {
+      if (archivo == null) {
+        throw new IllegalArgumentException("El archivo no puede ser nulo");
+      }
+
     return new ResponseEntity<>(
       archivoService.saveArchivo(archivo),
       HttpStatus.CREATED
@@ -30,17 +38,18 @@ public class ArchivoController {
   }
   @PutMapping(value = ApiEndpoint.UPDATE_ARCHIVO)
   public ResponseEntity<?> update(@PathVariable(value = "id_archivo") Integer id_archivo,@RequestBody Archivo archivo) {
-      Archivo archivoUpdate = new Archivo();
-      archivoUpdate.setId_archivo(id_archivo);
-      archivoUpdate.setLink(archivo.getLink());
-      archivoUpdate.setNaturaleza(archivo.getNaturaleza());
-      archivoUpdate.setEstado(archivo.getEstado());
-      archivoUpdate.setCreadoUsuario(archivo.getCreadoUsuario());
-      archivoUpdate.setCreadoFecha(archivo.getCreadoFecha());
-      archivoUpdate.setModificadoUsuario(archivo.getModificadoUsuario());
-      archivoUpdate.setModificadoFecha(archivo.getModificadoFecha());
-      archivoUpdate.setEliminacionUsuario(archivo.getEliminacionUsuario());
-      archivoUpdate.setEliminacionFecha(archivo.getEliminacionFecha());
+      Archivo archivoUpdate = new Archivo(
+        id_archivo,
+        archivo.getLink(),
+        archivo.getNaturaleza(),
+        archivo.getEstado(),
+        archivo.getCreadoUsuario(),
+        archivo.getCreadoFecha(),
+        archivo.getModificadoUsuario(),
+        archivo.getModificadoFecha(),
+        archivo.getEliminacionUsuario(),
+        archivo.getEliminacionFecha()
+      );
       if (archivoUpdate == null) {
           throw new IllegalArgumentException("El archivo no puede ser nulo");
         }
@@ -56,7 +65,7 @@ public class ArchivoController {
     @PathVariable(value = "id_archivo") Integer id_archivo
   ) {
     if (archivoService.deleteArchivo(id_archivo)) {
-      return new ResponseEntity<>("eliminado",HttpStatus.OK);
+      throw new IllegalArgumentException("No se pudo eliminar el archivo");
     }
     return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
   }

@@ -25,7 +25,7 @@ public class Solicitud {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Integer id_resolucion;
+  private Integer id_solicitud;
 
   @Column(name = "fecha", nullable = false)
   private Date fecha;
@@ -59,4 +59,6 @@ public class Solicitud {
 
   @Column(name = "eliminacion_fecha", nullable = true)
   private Date eliminacionFecha;
+
+
 }

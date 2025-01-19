@@ -17,6 +17,9 @@ public class SolicitudController {
 
   @GetMapping(value = ApiEndpoint.GET_ALL_SOLICITUD)
   public ResponseEntity<?> getAll() {
+    if (solicitudService.findSolicitudAll().isEmpty()) {
+      throw new IllegalArgumentException("No existen solicitudes");
+    }
     return new ResponseEntity<>(
       solicitudService.findSolicitudAll(),
       HttpStatus.OK
@@ -33,24 +36,28 @@ public class SolicitudController {
   }
 
   @PutMapping(value = ApiEndpoint.UPDATE_SOLICITUD)
-  public ResponseEntity<?> update(@PathVariable(value = "id_resolucion") Integer id_resolucion,@RequestBody Solicitud solicitud) {
-    Solicitud solicitudUpdate = new Solicitud();
-    solicitudUpdate.setId_resolucion(id_resolucion);
-    solicitudUpdate.setComentario(solicitud.getComentario());
-    solicitudUpdate.setEstado(solicitud.getEstado());
-    solicitudUpdate.setId_resolucion(solicitud.getId_resolucion());
+  public ResponseEntity<?> update(@PathVariable(value = "id_solicitud") Integer id_solicitud,@RequestBody Solicitud solicitud) {
+    Solicitud solicitudUpdate = new Solicitud(
+            id_solicitud,
+            solicitud.getFecha(),
+            solicitud.getComentario(),
+            solicitud.getEstado(),
+            solicitud.getFase(),
+            solicitud.getTipo(),
+            solicitud.getCreadoUsuario(),
+            solicitud.getCreadoFecha(),
+            solicitud.getModificadoUsuario(),
+            solicitud.getModificadoFecha(),
+            solicitud.getEliminacionUsuario(),
+            solicitud.getEliminacionFecha()
+    );
 
-    solicitudUpdate.setFase(solicitud.getFase());
-    solicitudUpdate.setCreadoFecha(solicitud.getCreadoFecha());
-    solicitudUpdate.setCreadoUsuario(solicitud.getCreadoUsuario());
-    solicitudUpdate.setModificadoFecha(solicitud.getModificadoFecha());
-    solicitudUpdate.setModificadoUsuario(solicitud.getModificadoUsuario());
-    if(solicitud.equals(null)){throw new IllegalArgumentException("La solicitud no puede ser nula");}
+    if(id_solicitud == null){throw new IllegalArgumentException("El id de la solicitud no puede ser nulo");}
     if(solicitud.getComentario() == null){throw new IllegalArgumentException("El comentario no puede ser nulo");}
     if(solicitud.getEstado() == null){throw new IllegalArgumentException("El estado no puede ser nulo");}
 
     return new ResponseEntity<>(
-      solicitudService.updateSolicitud(solicitud),
+      solicitudService.updateSolicitud(solicitudUpdate),
       HttpStatus.OK
     );
   }

@@ -1,6 +1,8 @@
 package com.resolucion.resolucion.application;
 
 import com.resolucion.resolucion.domain.Decano;
+import com.resolucion.resolucion.domain.dto.decano.DecanoDto;
+import com.resolucion.resolucion.domain.mapper.DecanoMapper;
 import com.resolucion.resolucion.infraestructure.repository.IDecanoRepository;
 import com.resolucion.resolucion.infraestructure.services.IDecanoService;
 import java.util.List;
@@ -15,7 +17,8 @@ public class DecanoService implements IDecanoService {
 
   @Override
   public List<Decano> findDecanoAll() {
-    return (List<Decano>) decanoRepository.findAll();
+    List<Decano> decanos = (List<Decano>) decanoRepository.findAll();
+    return decanos;
   }
 
   @Override

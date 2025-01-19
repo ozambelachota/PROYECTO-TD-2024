@@ -49,21 +49,21 @@ public class Resolucion {
   @JoinColumn(name = "id_solicitud", nullable = false)
   private Solicitud solicitud;
 
-  @Column(name = "creado_usuario")
+  @Column(name = "creado_usuario", nullable = true)
   private Integer creadoUsuario;
 
-  @Column(name = "creado_fecha")
+  @Column(name = "creado_fecha", nullable = true)
   private Date creadoFecha;
 
-  @Column(name = "modificado_usuario")
+  @Column(name = "modificado_usuario", nullable = true)
   private Integer modificadoUsuario;
 
-  @Column(name = "modificado_fecha")
+  @Column(name = "modificado_fecha", nullable = true)
   private Date modificadoFecha;
 
-  @Column(name = "eliminacion_usuario")
+  @Column(name = "eliminacion_usuario", nullable = true)
   private Integer eliminacionUsuario;
 
-  @Column(name = "eliminacion_fecha")
+  @Column(name = "eliminacion_fecha", nullable = true)
   private Date eliminacionFecha;
 }

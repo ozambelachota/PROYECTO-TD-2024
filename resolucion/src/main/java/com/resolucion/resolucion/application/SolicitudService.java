@@ -41,7 +41,7 @@ public class SolicitudService implements ISolicitudService {
 
   @Override
   public Solicitud updateSolicitud(Solicitud solicitud) {
-    var solicitudDB = solicitudRepository.findById(solicitud.getId_resolucion());
+    var solicitudDB = solicitudRepository.findById(solicitud.getId_solicitud());
     if (solicitudDB.isPresent()) {
       return solicitudRepository.save(solicitud);
     }

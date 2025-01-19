@@ -37,20 +37,21 @@ public class ResolucionController {
   }
   @PutMapping(value = ApiEndpoint.UPDATE_RESOLUCION)
   public ResponseEntity<?> update(@PathVariable(value = "id_resolucion") Integer id_resolucion,@RequestBody Resolucion resolucion) {
-    var resolucionUpdate = new Resolucion();
-    resolucionUpdate.setId_resolucion(id_resolucion);
-    resolucionUpdate.setTipo(resolucion.getTipo());
-    resolucionUpdate.setEstado(resolucion.getEstado());
-    resolucionUpdate.setArchivo(resolucion.getArchivo());
-    resolucionUpdate.setCreadoFecha(resolucion.getCreadoFecha());
-    resolucionUpdate.setCreadoUsuario(resolucion.getCreadoUsuario());
-    resolucionUpdate.setModificadoFecha(resolucion.getModificadoFecha());
-    resolucionUpdate.setModificadoUsuario(resolucion.getModificadoUsuario());
-    resolucionUpdate.setCodigo(resolucion.getCodigo());
-    resolucionUpdate.setSolicitud(resolucion.getSolicitud());
-    resolucionUpdate.setTitulo(resolucion.getTitulo());
-    resolucionUpdate.setEliminacionFecha(resolucion.getEliminacionFecha());
-    resolucionUpdate.setEliminacionUsuario(resolucion.getEliminacionUsuario());
+    var resolucionUpdate = new Resolucion(
+        id_resolucion,
+        resolucion.getCodigo(),
+        resolucion.getTitulo(),
+        resolucion.getTipo(),
+        resolucion.getEstado(),
+        resolucion.getArchivo(),
+        resolucion.getSolicitud(),
+        resolucion.getCreadoUsuario(),
+        resolucion.getCreadoFecha(),
+        resolucion.getModificadoUsuario(),
+        resolucion.getModificadoFecha(),
+        resolucion.getEliminacionUsuario(),
+        resolucion.getEliminacionFecha()
+    );
     if (resolucion.getArchivo() == null) {
       throw new IllegalArgumentException("El archivo no puede ser nulo");
     }

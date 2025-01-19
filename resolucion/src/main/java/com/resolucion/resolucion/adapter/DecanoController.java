@@ -4,6 +4,8 @@ import com.resolucion.resolucion.application.DecanoService;
 import com.resolucion.resolucion.domain.Decano;
 import com.resolucion.resolucion.domain.api.ApiEndpoint;
 
+import com.resolucion.resolucion.domain.dto.decano.DecanoDto;
+import com.resolucion.resolucion.domain.dto.decano.DecanoSaveDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,32 +25,31 @@ public class DecanoController {
     );
   }
   @PostMapping(value = ApiEndpoint.CREATE_DECANO)
-  public ResponseEntity<?> create(@RequestBody Decano decano) {
-    if(decano == null){throw new IllegalArgumentException("El decano no puede ser nulo");}
-      return new ResponseEntity<>(
-      decanoService.saveDecano(decano),
-      HttpStatus.CREATED
-    );
+  public ResponseEntity<?> create(@RequestBody Decano decano)  {
+    Decano decanoSave = decanoService.saveDecano(decano);
+    if (decanoSave == null) {
+      throw new IllegalArgumentException("No se pudo crear el decano");
+    }
+    return new ResponseEntity<>(decanoSave, HttpStatus.CREATED);
   }
   @PutMapping(value = ApiEndpoint.UPDATE_DECANO)
   public ResponseEntity<?> update(@PathVariable(value = "id_decano") Integer id_decano,@RequestBody Decano decano) {
     if(decano == null){throw new IllegalArgumentException("El decano no puede ser nulo");}
     if(id_decano == null){throw new IllegalArgumentException("El id de la resolucion no puede ser nulo");}
-
-    Decano decanoUpdate = new Decano();
-    decanoUpdate.setIdDecano(id_decano);
-    decanoUpdate.setEstado(decano.getEstado());
-    decanoUpdate.setResolucion(decano.getResolucion());
-    decanoUpdate.setCreadoFecha(decano.getCreadoFecha());
-    decanoUpdate.setCreadoUsuario(decano.getCreadoUsuario());
-    decanoUpdate.setModificadoFecha(decano.getModificadoFecha());
-    decanoUpdate.setModificadoUsuario(decano.getModificadoUsuario());
-    decanoUpdate.setEliminacionFecha(decano.getEliminacionFecha());
-    decanoUpdate.setEliminacionUsuario(decano.getEliminacionUsuario());
-
+    Decano decanoUpdate = new Decano(
+            id_decano,
+            decano.getEstado(),
+            decano.getResolucion(),
+            decano.getCreadoUsuario(),
+            decano.getCreadoFecha(),
+            decano.getModificadoUsuario(),
+            decano.getModificadoFecha(),
+            decano.getEliminacionUsuario(),
+            decano.getEliminacionFecha()
+    );
 
     return new ResponseEntity<>(
-      decanoService.updateDecano(decano),
+      decanoService.updateDecano(decanoUpdate),
       HttpStatus.OK
     );
   }
