@@ -47,4 +47,16 @@ public class SolicitudService implements ISolicitudService {
         }
         return false; // Retorna false si no existe
     }
+
+    @Override
+    public Solicitud createSolicitud(Solicitud solicitud) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'createSolicitud'");
+    }
+
+    @Override
+    public Solicitud addSolicitud(Solicitud solicitud) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'addSolicitud'");
+    }
 }

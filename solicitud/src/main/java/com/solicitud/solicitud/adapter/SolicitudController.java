@@ -25,17 +25,9 @@ public class SolicitudController {
     }
 
     // Crear una nueva solicitud
-   /*  @PostMapping(value = Endpoint.CREATE_SOLICITUD)
+   @PostMapping(value = Endpoint.CREATE_SOLICITUD)
     public ResponseEntity<?> createSolicitud(@RequestBody Solicitud solicitud) {
         return new ResponseEntity<>(solicitudService.addSolicitud(solicitud), HttpStatus.CREATED);
-    }
-
-    // Obtener una solicitud por ID
-    @GetMapping(value = Endpoint.GET_SOLICITUD_BY_ID)
-    public ResponseEntity<?> getSolicitudById(@PathVariable("id") String id) {
-        Optional<Solicitud> solicitud = solicitudService.getByIdSolicitud(id);
-        return solicitud.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
-                .orElseGet(() -> new ResponseEntity<>("Solicitud no encontrada", HttpStatus.NOT_FOUND));
     }
 
     // Actualizar una solicitud
@@ -53,5 +45,5 @@ public class SolicitudController {
         } else {
             return new ResponseEntity<>("Solicitud no encontrada", HttpStatus.NOT_FOUND);
         }
-    }*/
+    }
 }
